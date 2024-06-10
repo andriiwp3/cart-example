@@ -2,9 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 import App from './App'
-import StoreProvider from './providers/store-provider'
-
 import store from './store/store'
+import StoreProvider from '@/providers/store-provider'
 
 import './index.css'
 
