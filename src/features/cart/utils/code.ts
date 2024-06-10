@@ -1,3 +1,5 @@
+import { DISCOUNT_CODE_REGEX } from "../constants";
+
 const getRandomNumber = (min: number, max: number) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -32,3 +34,5 @@ export const generateCode = (pattern: string) => {
     return code;
   }
   
+
+export const isCodeValid = (code: string, expectedPatternRegex = DISCOUNT_CODE_REGEX) => expectedPatternRegex.test(code)

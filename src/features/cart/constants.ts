@@ -6,4 +6,6 @@ export const AVAILABLE_TIMES_OF_DAY = Object.freeze([
     { label: 'Evening (5pm - 9pm)', value: TIMES_OF_DAY.EVENING},
 ])
 
+export const DISCOUNT_CODE_REGEX = /^[A-Z]{6}\d{3}$/;
+
 export const DISCOUNT_CODE_PATTERN = 'LLLLLLNNN';
