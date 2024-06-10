@@ -2,6 +2,7 @@ import { ChangeEventHandler } from "react";
 import Heading from "@/components/heading";
 import Input from "@/components/forms/input";
 import { HEADING_VARIANTS } from "@/components/heading/types";
+import { TEXTS } from "../../texts";
 
 export interface SelectTimeProps {
     error?: string;
@@ -12,8 +13,8 @@ export interface SelectTimeProps {
 export default function DiscountInput({ currentValue, error, onChange }: SelectTimeProps) {
     return (
         <div>
-            <Heading variant={HEADING_VARIANTS.SECONDARY}>Have you got a discount code? Type it in the box below</Heading>
-            <Input label="Discount Code" name="discountCode" value={currentValue} error={error} onChange={onChange}  />
+            <Heading variant={HEADING_VARIANTS.SECONDARY}>{TEXTS.discountCodeInput.title}</Heading>
+            <Input label={TEXTS.discountCodeInput.label} name="discountCode" value={currentValue} error={error} onChange={onChange}  />
         </div>
     )
 }

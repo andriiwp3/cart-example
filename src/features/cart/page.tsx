@@ -9,6 +9,7 @@ import { AVAILABLE_TIMES_OF_DAY, DISCOUNT_CODE_PATTERN } from "./constants";
 import { ChangeEvent, useState } from "react";
 import { TIMES_OF_DAY } from "./types";
 import { generateCode, isCodeValid } from "./utils/code";
+import { TEXTS } from "./texts";
 
 export default function CartPage() {
     const dispatch = useAppDispatch()
@@ -17,21 +18,23 @@ export default function CartPage() {
     const discountCode = useAppSelector(selectDiscountCode);
     const discountCodeError = useAppSelector(selectDiscountCodeError);
     const [generatedCode, setGeneratedCode] = useState('');
+    
+    const generateDiscountCode = () => setGeneratedCode(generateCode(DISCOUNT_CODE_PATTERN));
 
     const changeTimeOfDay = (value: TIMES_OF_DAY) => dispatch(setTimeOfDay(value));
     const changeNotes = (event: ChangeEvent<HTMLTextAreaElement>) => dispatch(setNotes(event.target.value));
+
     const changeDiscountCode = (event: ChangeEvent<HTMLInputElement>) => {
         const code = event.target.value;
         const isValid = isCodeValid(code);
 
-        dispatch(setDiscountError(isValid ? undefined : `the code should follow a pattern of ${DISCOUNT_CODE_PATTERN}`))
+        dispatch(setDiscountError(isValid ? undefined : TEXTS.discountCodeInput.error(DISCOUNT_CODE_PATTERN)))
         dispatch(setDiscount(code));
     };
-    const generateDiscountCode = () => setGeneratedCode(generateCode(DISCOUNT_CODE_PATTERN));
 
     return (
         <div className="border border-black rounded p-8">
-            <Heading className="mb-8">Cart</Heading>
+            <Heading className="mb-8">{TEXTS.title}</Heading>
             <div className="flex flex-col gap-4">
                 <TimeOfDaySelect currentValue={timeOfDay} options={AVAILABLE_TIMES_OF_DAY} onChange={changeTimeOfDay} />
                 <DiscountInput currentValue={discountCode} error={discountCodeError} onChange={changeDiscountCode} />
