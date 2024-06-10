@@ -1,5 +1,7 @@
+import CartPage from "@/features/cart"
+
 function App() {
-  return <h1>Hello world!</h1>
+  return <CartPage />
 }
 
 export default App
