@@ -1,7 +1,7 @@
-import CartPage from "@/features/cart"
+import CartPage from '@/features/cart';
 
 function App() {
-  return <CartPage />
+  return <CartPage />;
 }
 
-export default App
+export default App;

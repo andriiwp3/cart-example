@@ -1,2 +1,2 @@
+export { default as cartReducer } from './cart-slice';
 export { default } from './page';
-export { default as cartReducer} from './cart-slice';

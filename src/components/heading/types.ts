@@ -1,4 +1,4 @@
 export enum HEADING_VARIANTS {
-    PRIMARY = 'h1',
-    SECONDARY = 'h2',
+  PRIMARY = 'h1',
+  SECONDARY = 'h2',
 }

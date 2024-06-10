@@ -1,12 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import './index.css';
 
-import App from './App'
-import store from './store/store'
-import StoreProvider from '@/providers/store-provider'
-import LayoutProvider from '@/providers/layout-provider'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
-import './index.css'
+import LayoutProvider from '@/providers/layout-provider';
+import StoreProvider from '@/providers/store-provider';
+
+import App from './App';
+import store from './store/store';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -16,4 +17,4 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       </LayoutProvider>
     </StoreProvider>
   </React.StrictMode>,
-)
+);
